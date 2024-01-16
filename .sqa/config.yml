@@ -6,7 +6,7 @@ config:
       repo: https://github.com/EOSC-synergy/sqaaas-tooling
     github.com/demichie/OpenPDAC-11:
       branch: main
-      repo: https://github.com/demichie/OpenPDAC-11/
+      repo: https://github.com/demichie/OpenPDAC-11
 environment:
   JPL_DOCKERFORCEBUILD: enabled
   JPL_KEEPGOING: enabled
@@ -15,44 +15,50 @@ sqa_criteria:
     repos:
       github.com/demichie/OpenPDAC-11 git:
         commands:
-        - /usr/bin/env sh .sqa/script.tasty-amaranth-whale.sh
-        container: qc.acc_craggy-corn-magpie
+        - /usr/bin/env sh .sqa/script.droopy-teal-chin.sh
+        container: qc.acc_bluesy-coral-fossa
   QC.Doc:
     repos:
       github.com/demichie/OpenPDAC-11 find_doc_files.py:
         commands:
-        - /usr/bin/env sh .sqa/script.squirrely-tan-dormouse.sh
-        container: qc.doc_squirrely-rose-wallaby
+        - /usr/bin/env sh .sqa/script.flabby-heliotrope-insect.sh
+        container: qc.doc_chewy-sangria-iguana
       github.com/demichie/OpenPDAC-11 git:
         commands:
-        - /usr/bin/env sh .sqa/script.foggy-purple-weasel.sh
-        container: qc.doc_slimy-fuchsia-gorilla
+        - /usr/bin/env sh .sqa/script.pasty-amethyst-ferret.sh
+        container: qc.doc_stealthy-flax-barnacle
       github.com/demichie/OpenPDAC-11 markdownlint:
         commands:
-        - /usr/bin/env sh .sqa/script.muggy-plum-chow.sh
-        container: qc.doc_breezy-flax-tamarin
+        - /usr/bin/env sh .sqa/script.squeaky-xanthic-toad.sh
+        container: qc.doc_snippy-gamboge-mammoth
   QC.Lic:
     repos:
       github.com/demichie/OpenPDAC-11 licensee:
         commands:
-        - /usr/bin/env sh .sqa/script.stinky-lemon-malamute.sh
-        container: qc.lic_clammy-red-lemur
+        - /usr/bin/env sh .sqa/script.gimpy-plum-spoonbill.sh
+        container: qc.lic_flaky-chartreuse-malamute
+  QC.Met:
+    repos:
+      github.com/demichie/OpenPDAC-11 cff-converter-python:
+        commands:
+        - /usr/bin/env sh .sqa/script.sunny-tangerine-chinchilla.sh
+        container: qc.met_pasty-jade-tuatara
   QC.Sec:
     repos:
       github.com/demichie/OpenPDAC-11 bandit:
         commands:
-        - /usr/bin/env sh .sqa/script.stinky-magnolia-audemer.sh
-        container: qc.sec_cloudy-sapphire-chinook
+        - /usr/bin/env sh .sqa/script.droopy-teal-greyhound.sh
+        container: qc.sec_wimpy-orange-moorhen
   QC.Sty:
     repos:
       github.com/demichie/OpenPDAC-11 flake8:
         commands:
-        - /usr/bin/env sh .sqa/script.smelly-crimson-gar.sh
-        container: qc.sty_seedy-buff-tapir
+        - /usr/bin/env sh .sqa/script.chewy-tomato-rat.sh
+        container: qc.sty_flimsy-cyan-squid
   QC.Ver:
     repos:
       github.com/demichie/OpenPDAC-11 get_git_tags.py:
         commands:
-        - /usr/bin/env sh .sqa/script.sunny-lavender-mastiff.sh
-        container: qc.ver_squeaky-chestnut-capuchin
+        - /usr/bin/env sh .sqa/script.hilly-cerulean-octopus.sh
+        container: qc.ver_pretty-lilac-dane
 timeout: 5400
